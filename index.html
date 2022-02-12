@@ -8,25 +8,7 @@
 </head>
 <body>
     <script>
-        /*
-        The Problem:
-        Write a program that pits human against machine in a match of rock, paper, scissors. Provide a way
-        for the computer to make a selection of either rock, paper or scissors. Provide a way for a human to
-        make a selection. Compare the human and computer selections to determine the round winner. The game should
-        have five rounds, afterwhich a game winner is determined based on the number of rounds won.
-
-        In this iteration of the project, there will only be a command-line/console interface. The only user input
-        will be allowing users to provide their selection of rock, paper or scissors. The output will be the winning
-        selection and if it was computer or player who won.
-
-        Pseudocode
-        Prompt user for their selection of rock, paper or scissors
-        Store user input in a variable
-        Have computer make a selection
-        Compare user and computer selections and return the winner
-        Repeat the game 5 times
-        */
-        // Initialize constants that will be used for the game (single round)
+        // Initialize variables that will be used for player and computer selections as well as score tracking
         let playerSelection;
         let computerSelection;
         let playerScore = 0;
@@ -65,7 +47,6 @@
             for (let i = 0; i < 5; i++) {
                 playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
                 computerSelection = computerPlay();
-
                 console.log(playRound(playerSelection, computerSelection));
             }
 
