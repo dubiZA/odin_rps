@@ -57,6 +57,8 @@
 
             if (playerScore > computerScore) {
                 console.log(`You won the game! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
+            } else if (playerScore === computerScore) {
+                console.log(`Game was a draw! Your score (${playerScore}) was the same as the computer (${computerScore}).`);
             } else {
                 console.log(`You lost the game! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
             }
