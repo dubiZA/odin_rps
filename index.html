@@ -26,17 +26,37 @@
         Compare user and computer selections and return the winner
         Repeat the game 5 times
         */
-        const playerSelection = window.prompt("Enter your selection (rock, paper or scissors):");
-        const computerSelection = "";
+        // Initialize constants that will be used for the game (single round)
+        const playerSelection = "rock".toLowerCase(); //window.prompt("Enter your selection (rock, paper or scissors):");
+        const computerSelection = computerPlay();
 
+        // Create function that will generate the computer's selection
         function computerPlay() {
-            return computerSelection
+            switch(Math.floor(Math.random() * 3) +1) {
+                case 1:
+                    return "rock";
+                    break;
+                case 2:
+                    return "paper";
+                    break;
+                case 3:
+                    return "scissors";
+                    break;
+            }
         }
 
+        // Create function that will "play" a single round
         function playRound(playerSelection, computerSelection) {
-            return winner
+            if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
+                return `You Win! ${playerSelection} beats ${computerSelection}`;
+            } else if (playerSelection === computerSelection) {
+                return `It's a tie!`;
+            } else {
+                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            }
         }
 
+        // Create function that will loop 5 times, initiating a new round each time
         function game() {
             return
         }
