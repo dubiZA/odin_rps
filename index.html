@@ -68,6 +68,12 @@
 
                 console.log(playRound(playerSelection, computerSelection));
             }
+
+            if (playerScore > computerScore) {
+                console.log(`You win! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
+            } else {
+                console.log(`You lose! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
+            }
         }
     </script>
 </body>
