@@ -27,8 +27,8 @@
         Repeat the game 5 times
         */
         // Initialize constants that will be used for the game (single round)
-        const playerSelection = "rock".toLowerCase(); //window.prompt("Enter your selection (rock, paper or scissors):");
-        const computerSelection = computerPlay();
+        let playerSelection;
+        let computerSelection;
 
         // Create function that will generate the computer's selection
         function computerPlay() {
@@ -58,7 +58,11 @@
 
         // Create function that will loop 5 times, initiating a new round each time
         function game() {
-            return
+            for (let i = 0; i < 5; i++) {
+                playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
+                computerSelection = computerPlay();
+                playRound(playerSelection, computerSelection);
+            }
         }
     </script>
 </body>
