@@ -15,9 +15,7 @@
         // DISCLAIMER: This is an early stage project and does not include advanced things like input validation etc.
         // This code base might advance as I go further through the content in TOP.
         //
-        // Initialize variables that will be used for player and computer selections as well as score tracking
-        let playerSelection;
-        let computerSelection;
+        // Initialize variables that will be used for player and computer score tracking
         let playerScore = 0;
         let computerScore = 0;
 
@@ -52,8 +50,8 @@
         // Create function that will loop 5 times, initiating a new round each time
         function game() {
             for (let i = 0; i < 5; i++) {
-                playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
-                computerSelection = computerPlay();
+                let playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
+                let computerSelection = computerPlay();
                 console.log(playRound(playerSelection, computerSelection));
             }
 
