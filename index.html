@@ -51,18 +51,18 @@
         function playRound(playerSelection, computerSelection) {
             if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
                 playerScore++;
-                return `You Win! ${playerSelection} beats ${computerSelection}`;
+                return `You Win! ${playerSelection} beats ${computerSelection}.`;
             } else if (playerSelection === computerSelection) {
                 return `It's a tie!`;
             } else {
                 computerScore++;
-                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                return `You Lose! ${computerSelection} beats ${playerSelection}.`;
             }
         }
 
         // Create function that will loop 5 times, initiating a new round each time
         function game() {
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 5; i++) {
                 playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
                 computerSelection = computerPlay();
 
@@ -70,9 +70,9 @@
             }
 
             if (playerScore > computerScore) {
-                console.log(`You win! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
+                console.log(`You won the game! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
             } else {
-                console.log(`You lose! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
+                console.log(`You lost the game! Your score was ${playerScore} vs. computer score of ${computerScore}.`);
             }
         }
     </script>
