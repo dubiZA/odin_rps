@@ -29,6 +29,8 @@
         // Initialize constants that will be used for the game (single round)
         let playerSelection;
         let computerSelection;
+        let playerScore = 0;
+        let computerScore = 0;
 
         // Create function that will generate the computer's selection
         function computerPlay() {
@@ -48,20 +50,23 @@
         // Create function that will "play" a single round
         function playRound(playerSelection, computerSelection) {
             if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
+                playerScore++;
                 return `You Win! ${playerSelection} beats ${computerSelection}`;
             } else if (playerSelection === computerSelection) {
                 return `It's a tie!`;
             } else {
+                computerScore++;
                 return `You Lose! ${computerSelection} beats ${playerSelection}`;
             }
         }
 
         // Create function that will loop 5 times, initiating a new round each time
         function game() {
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 3; i++) {
                 playerSelection = window.prompt("Enter your selection (rock, paper, scissors): ").toLowerCase();
                 computerSelection = computerPlay();
-                playRound(playerSelection, computerSelection);
+
+                console.log(playRound(playerSelection, computerSelection));
             }
         }
     </script>
